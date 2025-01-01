@@ -26,7 +26,8 @@ class LoginActivity : AppCompatActivity() {
 
             if (usuariTrobat != null){
                 Toast.makeText(this, "Usuari trobat!", Toast.LENGTH_SHORT).show()
-                val intent= Intent(this, CafesFragment::class.java)
+                val intent= Intent(this, HomeActivity::class.java)
+                startActivity(intent)
 
             }
             else Toast.makeText(this, "Usuari no trobat!", Toast.LENGTH_SHORT).show()

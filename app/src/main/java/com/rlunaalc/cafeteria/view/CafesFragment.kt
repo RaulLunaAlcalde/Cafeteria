@@ -25,7 +25,7 @@ class CafesFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
+        binding = FragmentCafesBinding.inflate(inflater, container, false)
         val recyclerView: RecyclerView = binding.recyclerView
 
         // Configuración del RecyclerView

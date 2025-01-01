@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Cafés"
+        android:icon="@drawable/baseline_coffee_24"
+        android:id="@+id/cafes"/>
+    <item android:title="Galetes"
+        android:icon="@drawable/round_cookie_24"
+        android:id="@+id/galetes"/>
+    <item android:title="Pastís"
+        android:icon="@drawable/baseline_cake_24"
+        android:id="@+id/pastis"/>
+    <item android:title="Cistella"
+        android:icon="@drawable/baseline_shopping_cart_24"
+        android:id="@+id/cistella"/>
+</menu>
