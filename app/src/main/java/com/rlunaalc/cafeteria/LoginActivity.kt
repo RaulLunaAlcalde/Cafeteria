@@ -9,6 +9,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.databinding.DataBindingUtil
 import com.rlunaalc.cafeteria.databinding.ActivityLoginBinding
+import com.rlunaalc.cafeteria.view.CafesFragment
 
 
 class LoginActivity : AppCompatActivity() {
@@ -25,6 +26,8 @@ class LoginActivity : AppCompatActivity() {
 
             if (usuariTrobat != null){
                 Toast.makeText(this, "Usuari trobat!", Toast.LENGTH_SHORT).show()
+                val intent= Intent(this, CafesFragment::class.java)
+
             }
             else Toast.makeText(this, "Usuari no trobat!", Toast.LENGTH_SHORT).show()
 
