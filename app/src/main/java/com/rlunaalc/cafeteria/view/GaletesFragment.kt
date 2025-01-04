@@ -10,34 +10,36 @@ import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.rlunaalc.cafeteria.ProducteAdapter
-import com.rlunaalc.cafeteria.model.ProducteModel
-import com.rlunaalc.cafeteria.R
 import com.rlunaalc.cafeteria.databinding.FragmentCafesBinding
+import com.rlunaalc.cafeteria.databinding.FragmentGaletesBinding
 import com.rlunaalc.cafeteria.model.CafesList.Companion.cafes
 import com.rlunaalc.cafeteria.model.CistellaSharedViewModel
 import com.rlunaalc.cafeteria.model.GaletesList.Companion.galetes
 
+class GaletesFragment : Fragment() {
 
-class CafesFragment : Fragment() {
-
-    private lateinit var binding: FragmentCafesBinding
+    private lateinit var binding: FragmentGaletesBinding
     private val sharedViewModel: CistellaSharedViewModel by activityViewModels()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentCafesBinding.inflate(inflater, container, false)
+
+        binding = FragmentGaletesBinding.inflate(inflater, container, false)
         val recyclerView: RecyclerView = binding.recyclerView
 
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         sharedViewModel.cistella.observe(viewLifecycleOwner){
-                llistaGaletes -> binding.recyclerView.adapter = ProducteAdapter(cafes) {
-                cafe -> sharedViewModel.afegirACistella(cafe)
-            Toast.makeText(requireContext(), "${cafe.nom} afegit a la cistella", Toast.LENGTH_SHORT).show()
+                llistaGaletes -> binding.recyclerView.adapter = ProducteAdapter(galetes) {
+                galeta -> sharedViewModel.afegirACistella(galeta)
+            Toast.makeText(requireContext(), "${galeta.nom} afegit a la cistella", Toast.LENGTH_SHORT).show()
         }
         }
+
         return binding.root
     }
+
 
 }

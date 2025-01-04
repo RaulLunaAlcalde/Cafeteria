@@ -10,34 +10,33 @@ import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.rlunaalc.cafeteria.ProducteAdapter
-import com.rlunaalc.cafeteria.model.ProducteModel
-import com.rlunaalc.cafeteria.R
 import com.rlunaalc.cafeteria.databinding.FragmentCafesBinding
+import com.rlunaalc.cafeteria.databinding.FragmentPastisBinding
 import com.rlunaalc.cafeteria.model.CafesList.Companion.cafes
 import com.rlunaalc.cafeteria.model.CistellaSharedViewModel
-import com.rlunaalc.cafeteria.model.GaletesList.Companion.galetes
+import com.rlunaalc.cafeteria.model.PastisList.Companion.pastissos
 
+class PastisFragment : Fragment() {
 
-class CafesFragment : Fragment() {
-
-    private lateinit var binding: FragmentCafesBinding
+    private lateinit var binding: FragmentPastisBinding
     private val sharedViewModel: CistellaSharedViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentCafesBinding.inflate(inflater, container, false)
+        binding = FragmentPastisBinding.inflate(inflater, container, false)
         val recyclerView: RecyclerView = binding.recyclerView
 
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         sharedViewModel.cistella.observe(viewLifecycleOwner){
-                llistaGaletes -> binding.recyclerView.adapter = ProducteAdapter(cafes) {
-                cafe -> sharedViewModel.afegirACistella(cafe)
-            Toast.makeText(requireContext(), "${cafe.nom} afegit a la cistella", Toast.LENGTH_SHORT).show()
+                llistaPastissos -> binding.recyclerView.adapter = ProducteAdapter(pastissos) {
+                pastis -> sharedViewModel.afegirACistella(pastis)
+            Toast.makeText(requireContext(), "${pastis.nom} afegit a la cistella", Toast.LENGTH_SHORT).show()
         }
         }
         return binding.root
     }
+
 
 }
