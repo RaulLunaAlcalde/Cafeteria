@@ -32,17 +32,14 @@ class CistellaFragment : Fragment() {
         binding = FragmentCistellaBinding.inflate(inflater, container, false)
         val recyclerView: RecyclerView = binding.recyclerViewCistella
 
-        // Configuración del RecyclerView
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         sharedViewModel.cistella.observe(viewLifecycleOwner) { llistaProductes ->
             binding.recyclerViewCistella.adapter = CistellaAdapter(llistaProductes) { producte ->
-                // Manejar la eliminación de productos desde el adaptador
                 sharedViewModel.retirarProducteCistella(producte)
                 Toast.makeText(requireContext(), "${producte.nom} eliminat de la cistella", Toast.LENGTH_SHORT).show()
             }
 
-            // Actualizar el texto del total
             val total = sharedViewModel.sumarTotal()
             binding.textTotal.text = "Total: €${"%.2f".format(total)}"
         }
