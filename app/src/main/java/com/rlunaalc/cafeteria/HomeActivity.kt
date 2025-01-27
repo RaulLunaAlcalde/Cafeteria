@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.rlunaalc.cafeteria.databinding.ActivityHomeBinding
+import com.rlunaalc.cafeteria.view.AperitiusFragment
 import com.rlunaalc.cafeteria.view.CafesFragment
 import com.rlunaalc.cafeteria.view.CistellaFragment
 import com.rlunaalc.cafeteria.view.GaletesFragment
@@ -35,6 +36,10 @@ class HomeActivity : AppCompatActivity() {
                 }
                 R.id.pastis -> {
                     replaceFragment(PastisFragment())
+                    true
+                }
+                R.id.Aperitius ->{
+                    replaceFragment(AperitiusFragment())
                     true
                 }
                 else -> false

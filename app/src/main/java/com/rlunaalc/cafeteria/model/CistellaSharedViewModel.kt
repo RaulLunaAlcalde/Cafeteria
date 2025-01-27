@@ -24,4 +24,8 @@ class CistellaSharedViewModel : ViewModel() {
     fun sumarTotal(): Double {
         return _cistella.value?.sumOf { it.preuFinal } ?: 0.0
     }
+
+    fun totalProductes(): Int? {
+        return _cistella.value?.size
+    }
 }

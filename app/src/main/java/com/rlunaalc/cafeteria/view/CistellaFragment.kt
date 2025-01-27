@@ -44,6 +44,9 @@ class CistellaFragment : Fragment() {
             binding.textTotal.text = "Total: €${"%.2f".format(total)}"
         }
 
+        val totalProductes = sharedViewModel.totalProductes()
+        binding.textTotalProductes.text = "Total productes: ${totalProductes.toString()}"
+
         return binding.root
     }
 

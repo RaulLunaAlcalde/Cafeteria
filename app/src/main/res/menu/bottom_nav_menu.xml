@@ -13,4 +13,7 @@
     <item android:title="Cistella"
         android:icon="@drawable/baseline_shopping_cart_24"
         android:id="@+id/cistella"/>
+    <item android:title="Aperitius"
+        android:icon="@drawable/baseline_4k_24"
+        android:id="@+id/Aperitius"/>
 </menu>
